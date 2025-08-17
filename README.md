@@ -117,8 +117,8 @@ Follow these steps to get the application running on your local machine.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/loan-risk-system.git](https://github.com/your-username/loan-risk-system.git)
-    cd loan-risk-system
+    git clone [https://github.com/d-kavinraja/AI-Powered-Loan-Eligibility-Risk-Scoring-System.git](https://github.com/d-kavinraja/AI-Powered-Loan-Eligibility-Risk-Scoring-System.git)
+    cd AI-Powered-Loan-Eligibility-Risk-Scoring-System
     ```
 
 2.  **Create and activate a virtual environment:**
@@ -147,8 +147,6 @@ Follow these steps to get the application running on your local machine.
 
 2.  **Access the API:**
     -   **Frontend**: `http://127.0.0.1:8000`
-    -   **Swagger UI (Interactive Docs)**: `http://127.0.0.1:8000/docs`
-    -   **ReDoc (Alternative Docs)**: `http://127.0.0.1:8000/redoc`
 
 ---
 
