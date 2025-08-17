@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Loan Risk Scoring System</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🏦 AI-Powered Loan Risk Scoring System</h1>
+            <p>Advanced machine learning model for loan default risk assessment</p>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="tab-button active" onclick="showTab('prediction')">Risk Prediction</button>
+            <button class="tab-button" onclick="showTab('insights')">Model Insights</button>
+            <button class="tab-button" onclick="showTab('documentation')">Documentation</button>
+        </nav>
+
+        <!-- Prediction Tab -->
+        <div id="prediction" class="tab-content active">
+            <div class="card">
+                <h2>Loan Risk Assessment</h2>
+                <form id="loanForm" class="loan-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="Age" min="18" max="100" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="income">Annual Income ($)</label>
+                            <input type="number" id="income" name="Income" min="1" step="0.01" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount ($)</label>
+                            <input type="number" id="loanAmount" name="LoanAmount" min="1" step="0.01" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="creditScore">Credit Score</label>
+                            <input type="number" id="creditScore" name="CreditScore" min="300" max="850" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="monthsEmployed">Months Employed</label>
+                            <input type="number" id="monthsEmployed" name="MonthsEmployed" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="numCreditLines">Number of Credit Lines</label>
+                            <input type="number" id="numCreditLines" name="NumCreditLines" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate (%)</label>
+                            <input type="number" id="interestRate" name="InterestRate" min="0" max="30" step="0.01" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loanTerm">Loan Term (months)</label>
+                            <input type="number" id="loanTerm" name="LoanTerm" min="1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dtiRatio">Debt-to-Income Ratio</label>
+                            <input type="number" id="dtiRatio" name="DTIRatio" min="0" max="1" step="0.01" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="education">Education</label>
+                            <select id="education" name="Education" required>
+                                <option value="">Select Education</option>
+                                <option value="High School">High School</option>
+                                <option value="Bachelor's">Bachelor's</option>
+                                <option value="Master's">Master's</option>
+                                <option value="PhD">PhD</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="employmentType">Employment Type</label>
+                            <select id="employmentType" name="EmploymentType" required>
+                                <option value="">Select Employment</option>
+                                <option value="Full-time">Full-time</option>
+                                <option value="Part-time">Part-time</option>
+                                <option value="Self-employed">Self-employed</option>
+                                <option value="Unemployed">Unemployed</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="maritalStatus">Marital Status</label>
+                            <select id="maritalStatus" name="MaritalStatus" required>
+                                <option value="">Select Status</option>
+                                <option value="Single">Single</option>
+                                <option value="Married">Married</option>
+                                <option value="Divorced">Divorced</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hasMortgage">Has Mortgage</label>
+                            <select id="hasMortgage" name="HasMortgage" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hasDependents">Has Dependents</label>
+                            <select id="hasDependents" name="HasDependents" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loanPurpose">Loan Purpose</label>
+                            <select id="loanPurpose" name="LoanPurpose" required>
+                                <option value="">Select Purpose</option>
+                                <option value="Home">Home</option>
+                                <option value="Auto">Auto</option>
+                                <option value="Education">Education</option>
+                                <option value="Business">Business</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hasCoSigner">Has Co-Signer</label>
+                            <select id="hasCoSigner" name="HasCoSigner" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Assess Risk</button>
+                        <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+                        <button type="button" class="btn btn-secondary" onclick="fillSampleData()">Sample Data</button>
+                    </div>
+                </form>
+                
+                <div id="predictionResult" class="result-card" style="display: none;">
+                    <h3>Risk Assessment Result</h3>
+                    <div id="resultContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insights Tab -->
+        <div id="insights" class="tab-content">
+            <div class="card">
+                <h2>Model Performance Insights</h2>
+                <button class="btn btn-primary" onclick="loadInsights()">Load Model Insights</button>
+                
+                <div id="insightsContent" style="display: none;">
+                    <div class="insights-grid">
+                        <div class="metric-card">
+                            <h3>Performance Metrics</h3>
+                            <div id="performanceMetrics"></div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h3>Feature Importance</h3>
+                            <div id="featureImportance"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-section">
+                        <h3>Model Performance Charts</h3>
+                        <div class="charts-grid">
+                            <div class="chart-container">
+                                <h4>Confusion Matrix</h4>
+                                <img id="confusionMatrix" src="/api/charts/confusion_matrix.png" alt="Confusion Matrix" style="max-width: 100%; height: auto;">
+                            </div>
+                            <div class="chart-container">
+                                <h4>ROC Curve</h4>
+                                <img id="rocCurve" src="/api/charts/roc_curve.png" alt="ROC Curve" style="max-width: 100%; height: auto;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation Tab -->
+        <div id="documentation" class="tab-content">
+            <div class="card">
+                <h2>API Documentation</h2>
+                
+                <div class="doc-section">
+                    <h3>Endpoints</h3>
+                    
+                    <div class="endpoint">
+                        <h4>POST /api/predict</h4>
+                        <p>Predict loan default risk based on borrower features</p>
+                        <div class="code-block">
+                            <pre>{
+  "Age": 35,
+  "Income": 75000,
+  "LoanAmount": 250000,
+  "CreditScore": 720,
+  "MonthsEmployed": 60,
+  "NumCreditLines": 5,
+  "InterestRate": 4.5,
+  "LoanTerm": 360,
+  "DTIRatio": 0.35,
+  "Education": "Bachelor's",
+  "EmploymentType": "Full-time",
+  "MaritalStatus": "Married",
+  "HasMortgage": "Yes",
+  "HasDependents": "Yes",
+  "LoanPurpose": "Home",
+  "HasCoSigner": "No"
+}</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <h4>GET /api/insights</h4>
+                        <p>Get model performance metrics and feature importance</p>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <h4>GET /api/charts/{chart_name}</h4>
+                        <p>Get model performance charts (confusion_matrix.png, roc_curve.png)</p>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <h4>GET /health</h4>
+                        <p>Health check endpoint</p>
+                    </div>
+                </div>
+                
+                <div class="doc-section">
+                    <h3>Setup Instructions</h3>
+                    <ol>
+                        <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+                        <li>Place model artifacts in <code>models/artifacts/</code></li>
+                        <li>Run the server: <code>uvicorn main:app --reload</code></li>
+                        <li>Access the UI at <code>http://localhost:8000</code></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

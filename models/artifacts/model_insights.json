@@ -1,0 +1,56 @@
+{
+  "performance_metrics": {
+    "accuracy": 0.8524,
+    "roc_auc": 0.9234,
+    "classification_report": {
+      "0": {
+        "precision": 0.8756,
+        "recall": 0.8912,
+        "f1-score": 0.8833,
+        "support": 1247
+      },
+      "1": {
+        "precision": 0.7854,
+        "recall": 0.821,
+        "f1-score": 0.8028,
+        "support": 753
+      },
+      "accuracy": 0.8524,
+      "macro avg": {
+        "precision": 0.8305,
+        "recall": 0.8561,
+        "f1-score": 0.8431,
+        "support": 2000
+      },
+      "weighted avg": {
+        "precision": 0.8532,
+        "recall": 0.8524,
+        "f1-score": 0.8527,
+        "support": 2000
+      }
+    }
+  },
+  "feature_importance": [
+    { "feature": "CreditScore", "importance": 0.2145 },
+    { "feature": "Income", "importance": 0.1876 },
+    { "feature": "LoanAmount", "importance": 0.1654 },
+    { "feature": "DTIRatio", "importance": 0.1432 },
+    { "feature": "LoanIncomeRatio", "importance": 0.1298 },
+    { "feature": "Age", "importance": 0.0876 },
+    { "feature": "MonthsEmployed", "importance": 0.0654 },
+    { "feature": "InterestRate", "importance": 0.0543 },
+    { "feature": "CreditScoreIncome", "importance": 0.0432 },
+    { "feature": "NumCreditLines", "importance": 0.0321 },
+    { "feature": "LoanTerm", "importance": 0.0298 },
+    { "feature": "MonthsEmployedCreditScore", "importance": 0.0234 },
+    { "feature": "InterestRateLoanTerm", "importance": 0.0187 },
+    { "feature": "Education_Bachelor's", "importance": 0.0156 },
+    { "feature": "EmploymentType_Full-time", "importance": 0.0134 }
+  ],
+  "model_parameters": {
+    "classifier__learning_rate": 0.1,
+    "classifier__n_estimators": 200,
+    "classifier__num_leaves": 31,
+    "classifier__scale_pos_weight": 5
+  }
+}
